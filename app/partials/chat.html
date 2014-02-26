@@ -1,0 +1,24 @@
+<h2>Chat</h2>
+
+<form>
+  <input placeholder="Message..." ng-model="newMessage">
+  <button type="submit" ng-click="addMessage()">send</button>
+</form>
+
+
+
+<input type="text" ng-model="search" class="search-query" placeholder="Search">
+
+<ul>
+  <li ng-repeat="newProject in newProjects | orderByPriority | filter:search">
+  {{message.text}}
+  </li>
+</ul>
+
+
+
+<ul id="messages" ng-show="messages">
+    <li ng-repeat="message in messages | orderByPriority | reverse">{{message.text}}</li>
+</ul>
+
+<pre ng-bind="messages | json"></pre>

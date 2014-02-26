@@ -1,0 +1,151 @@
+/* app css stylesheet */
+
+body {
+  padding-top: 20px;
+}
+
+/* HTML5 UPLOADER STYLES */
+#holder { border: 5px dashed #ccc; width: 200px; min-height: 200px; text-align: center; color: #ccc; }
+#holder.hover { border: 5px dashed #0c0; }
+#holder img { display: block;
+    margin-left: auto;
+    margin-right: auto; }
+#holder p { margin: 10px; font-size: 14px; }
+progress { width: 210px; }
+/* progress:after { content: '%'; } */
+.fail { background: #c00; padding: 2px; color: #fff; }
+.hidden { display: none !important;}
+/* HTML5 UPLOADER STYLES */
+
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.searchbar {
+  padding-top: 50px;
+}
+
+.login {
+  padding-top: 20px;
+}
+
+.register {
+  padding-top: 50px;
+}
+
+.headline {
+  padding-top: 20px;
+  height:150px;
+  border-bottom: 1px solid gray;
+}
+
+.headline-right {
+  display: block;
+  float: right;
+}
+.headline-left {
+  display: block;
+  float: left;
+}
+
+.related {
+border-left:1em;
+
+}
+
+/** Search Results Grid **/
+.phone-images {
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.phones {
+  list-style: none;
+  margin: 0;
+  margin-top: 50px;
+}
+
+.thumb {
+  float: left;
+  height: 100px;
+  width: 100px;
+  padding-top: 10px;
+}
+
+.phones li {
+  clear: both;
+  height: 170px;
+  width: 100px;
+  padding-top: 25px;
+  display: inline-block;
+  margin:50;
+}
+
+/** Content Detail View **/
+img.phone {
+  float: left;
+  margin-right: 3em;
+  margin-bottom: 2em;
+  background-color: white;
+  padding: 2em;
+  height: 400px;
+  width: 400px;
+
+}
+
+ul.phone-thumbs {
+  margin: 0;
+  list-style: none;
+}
+
+ul.phone-thumbs li {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 1em;
+  background-color: white;
+}
+
+ul.phone-thumbs img {
+  height: 100px;
+  width: 100px;
+  padding: 1em;
+}
+
+ul.phone-thumbs img:hover {
+  cursor: pointer;
+}
+
+
+ul.specs {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.specs > li{
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
+ul.specs > li > span{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+ul.specs dt {
+  font-weight: bold;
+}
+
+h1 {
+  border-bottom: 1px solid gray;
+  padding-bottom: 0px;
+}

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    
+<h2>Step 4 / 5</h2>
+<div ng-form="noteForm">
+<h3>Please describe your project here:<br>
+<small>{{180 - result.length}} chars remaining</small>
+</h3>
+<form>
+	<textarea my-maxlength="180" ng-model="result" placeholder="Description" style="width: 500px; height: 200px" maxlength="180"></textarea>
+
+  	<!-- <textarea ng-model="description" type="textbox" placeholder="Description" style="width: 500px; height: 200px" maxlength="180"/></textarea> -->
+</form>
+<!-- <button ng-click="save()" ng-disabled="checkQuestions()">Save</button> -->
+<button ng-click="save()">Save</button>
+<!-- <button ng-disabled="!noteForm.$valid" ng-click="save()">Save</button> -->
+
+      
+      
+    	</div>
+
+	</div>
+</div>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>IoTAcademy</title>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body ng-cloak-auth class="hide">
+
+<div class="container">
+  <div class="row">
+    
+  <ul class="pull-left">
+    <!-- <li><a href="#/home">home</a></li>
+    <li><a href="#/chat">chat</a></li> -->
+    <li><a href="#/projectView">Projects</a></li>
+    <li><h2><a href="#/mainCat">Start a new project</a></h2></li>
+  </ul>
+  <ul class="pull-right">
+    <!-- <li><a href="#/home">home</a></li>
+    <li><a href="#/chat">chat</a></li> -->
+    <li><a href="#/mainCat">mainCat</a></li>
+    <li><a href="#/detailCat">detailCat</a></li>
+    <li><a href="#/detailCat2">detailCat2</a></li>
+    <li><a href="#/explanation">explanation</a></li>
+    <li><a href="#/summary">summary</a></li>
+    <li><a href="#/projectView">projectView</a></li>
+    <li ng-show-auth="logout,error"><a href="#/login">login</a></li>
+    <li ng-show-auth="login"><a href="#/account">account</a></li>
+    <p class="status good" ng-show-auth="login">Hello! You are logged in.</p>
+    <p class="status" ng-show-auth="logout">Not logged in</p>
+    <p class="status error" ng-show-auth="error">{{auth.error}}</p>
+  </ul>
+  
+</div>
+</div>
+
+  <div ng-view></div>
+
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
+
+  <script src="js/mainCat.js"></script>
+  <script src="js/detailCat.js"></script>
+  <script src="js/detailCat2.js"></script>
+  <script src="js/explanation.js"></script>
+  <script src="js/summary.js"></script>
+  <script src="js/projectView.js"></script>
+  <script src="js/ui-bootstrap-tpls-0.10.0.js"></script>
+  
+
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/service.login.js"></script>
+  <script src="js/service.firebase.js"></script>
+  <script src="js/module.waitForAuth.js"></script>
+  <script src="js/module.routeSecurity.js"></script>
+</body>
+</html>

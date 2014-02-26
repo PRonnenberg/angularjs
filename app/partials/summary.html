@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+ 
+<h2>Step 5 / 5</h2>
+
+<input ng-model="title" type="text" placeholder="Please give your project a title here" style="width: 500px; height: 45px; font-size: 22px; "/></input>
+<div class="hideContent" ng-show="checkQuestions2()">
+<h3>Here is your project page:</h3>
+
+<h4>You said that your project sits at the intersection of</h4>
+<!-- This global array is showing input categories: -->
+<ul id="mainCategories" ng-show="mainCategories">
+  <li ng-repeat="mainCategory in mainCategories">{{mainCategory}}</li>
+</ul>
+
+<br>
+
+<h4>Your problem is related to</h4>
+<ul id="detailCategories" ng-show="detailCategories">
+  <li ng-repeat="detailCategory in detailCategories">{{detailCategory}}</li>
+</ul>
+
+<br>
+
+<h4>Further factors that might be involved are</h4>
+<ul id="detailCategories2" ng-show="detailCategories2">
+  <li ng-repeat="detailCategory2 in detailCategories2">{{detailCategory2}}</li>
+</ul>
+
+<br>
+<h4>You described your project as follows</h4>
+<!-- <p>{{description}}</p> -->
+<form>
+  <!-- <textarea ng-model="description" type="textbox" placeholder="Description" style="width: 500px; height: 200px"/></textarea> -->
+  <textarea ng-model="explanation" type="textbox" placeholder="Description" style="width: 500px; height: 200px"/>{{explanation}}</textarea>
+</form>
+<br>
+<button ng-click="save()" ng-disabled="checkQuestions()">Save</button>
+</div>
+
+<!-- <pre ng-bind="projects | json"></pre> -->
+
+	</div>
+</div>

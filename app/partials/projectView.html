@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    
+<!-- TEST ENVIRONMENT -->
+<!-- <ul id="tmp2" ng-show="tmp2">
+  <li ng-repeat="tmp in tmp2">{{tmp}}</li>
+</ul> 
+<b>Title: </b>{{newProject.title}}
+<b>Description: </b> {{newProject.description}}
+<b>mainCats:</b>
+<ul id="newProjects" ng-show="newProjects">
+  <li ng-repeat="newProject in newProjects">{{newProject.mainCats}}</li>
+</ul>-->
+<!-- Search items by index
+
+<ul ng-repeat="newProject2 in newProjects" ng-if="$index > 5">
+    <li >{{newProject2.mainCats}}</li>
+</ul>
+-->
+
+<h2>Project View</h2>
+<ul id="newProjects" ng-show="newProjects">
+    <li ng-repeat="newProject in newProjects | reverse">
+      <b>Title: </b>{{newProject.title}}
+      <br>
+      <b>Description: </b> {{newProject.description}}
+      <br>
+      <b>Main Categories: </b> {{newProject.mainCats}}
+      <br>
+      <b>Detail Categories: </b> {{newProject.detailCats}}
+      <br>
+      <b>Detail2 Categories: </b> {{newProject.detailCats2}}
+      <br>
+      <br>
+    </li>
+</ul>
+
+<br>
+<br>
+<br>
+
+<input type="text" ng-model="search" class="search-query" placeholder="Search">
+
+    <h3>Related Projects</h3>
+
+  <ul ng-repeat="newProject in newProjects | orderByPriority | filter:search" ng-show="search.length">
+    <li>{{newProject.title}}</li>
+</ul>
+
+
+
+
+
+
+<!-- <pre ng-bind="friends | json"></pre>
+
+<pre ng-bind="newProjects | json"></pre> -->
+
+  </div>
+</div>

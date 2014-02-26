@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    
+<h2>Step 2 / 5</h2>
+
+<!-- TEST ENVIRONMENT -->
+<div class="pull-right">
+  <h5>Related Projects</h5>
+  <ul>
+    <!-- <li ng-repeat="newProject in newProjects | filter:detailCats.finalValue " ng-show="detailCats.finalValue.length"><a href="">{{newProject.title}}</a></li> -->
+    <li ng-repeat="newProject in newProjects | orderByPriority | filter:todoText2" ng-show="todoText2.length"><a href="">{{newProject.title}}</a></li>
+  </ul>
+</div>
+
+<h3>Specify your problem / keywords:<br>
+<small>for example: sleep deprivation, stress, asthma, coughing...</small>
+</h3>
+	<span ng-repeat="category in detailCats.categories">
+      <label class="checkbox" for="{{$index}}">
+        <input type="checkbox" ng-model="detailCats.value[getPos(category,detailCats.categories)]" name="group" id="{{$index}}" />
+        {{category}}
+        <button ng-click="delete($index)" class="btn-danger">Delete</button>
+      </label>
+    </span>
+
+    <!-- Debug: <pre ng-bind="detailCats | json"></pre> -->
+    <!-- Show selected items:
+    <span ng-repeat="finalValue in detailCats.finalValue">
+        {{finalValue}}
+    </span> -->
+    <br>
+
+<!-- Add checkbox List items -->
+	<form ng-submit="addTodo()">
+		<input type="text" ng-model="todoText2"  size="30"
+               placeholder="Add new keyword here">
+        <input type="submit" value="add" ng-disabled="checkQuestions2()">
+	</form>
+  <button ng-click="save()" ng-disabled="checkQuestions()">Save</button>
+
+
+<!-- Text saving Module
+<h3>Saving Inputs</h3>
+<form>
+  <input placeholder="Message..." ng-model="newMessage"></input>
+  <button type="submit" ng-click="addMessage()">send</button>
+  <br>
+  <input ng-model="title" type="text" placeholder="Title"/></input> <b>{{title}}</b>
+  <br>
+  <textarea ng-model="description" type="textbox" placeholder="Description" cols="40" rows="5"/></textarea> <b>{{description}}</b>
+</form>-->
+</div>
+</div>
