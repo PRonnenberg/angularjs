@@ -4,7 +4,7 @@
 angular.module('myApp',
       ['myApp.config', 'myApp.routes', 'myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers',
          'waitForAuth', 'routeSecurity', 'myApp.mainCat', 'myApp.detailCat', 'myApp.detailCat2', 'myApp.explanation',
-         'myApp.summary', 'myApp.projectView']
+         'myApp.summary', 'myApp.projectView', 'myApp.inputForm', 'myApp.projects', 'myApp.projectsDetail']
    )
 
    .run(['loginService', '$rootScope', 'FBURL', function(loginService, $rootScope, FBURL) {

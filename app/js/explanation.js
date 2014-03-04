@@ -33,7 +33,7 @@ angular.module('myApp.explanation', ['ngRoute'])
 
    }])
 
-
+/*
    .directive('myMaxlength', function() {
   		return {
     		require: 'ngModel',
@@ -42,14 +42,10 @@ angular.module('myApp.explanation', ['ngRoute'])
       			var maxlength = Number(attrs.myMaxlength);
       			function fromUser(text) {
           			ngModelCtrl.$setValidity('unique', text.length <= maxlength);
-          			//console.log(text);
-          			//description = text;
-          			//template: text;
-          			//'{{customer.name}}' : text;
-
           		return text;
       }
       ngModelCtrl.$parsers.push(fromUser);
     }
   }; 
 });
+*/

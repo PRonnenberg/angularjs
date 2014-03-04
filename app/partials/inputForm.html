@@ -1,0 +1,143 @@
+<div class="container">
+  <div class="row">
+
+<!-- ###################### STEP 1 CATEGORIES ###################### -->
+
+<h2>Step 1 / 6</h2>
+
+<h3>What categories does your project fall under?<br>
+<small>for example: health & environment & politics</small></h3>
+
+	<span ng-repeat="staticCategory in selection.staticCategories">
+      <label class="checkbox" for="{{$index}}">
+        <input type="checkbox" ng-model="selection.staticValue[getPos2(staticCategory,selection.staticCategories)]" name="group" id="{{$index}}" />
+        {{staticCategory}}
+      </label>
+    </span>
+
+    <ul ng-repeat="category in selection.categories">
+      <li>{{category}} <button ng-click="deleteOwnCat($index)" class="btn-danger">Delete</button></li>
+    </ul>
+
+<br>
+
+<!-- Add checkbox List items -->
+	<form ng-submit="addOwnCat()">
+		<input type="text" ng-model="todoText"  size="30"
+               placeholder="Add your own categories here">
+        <input type="submit" value="add" ng-disabled="checkAddOwnCat()">
+	</form>
+<button ng-click="nextStep()" ng-disabled="checkSaveMainCat()" scroll-bottom="bottom">Next Step</button>
+
+<hr>
+
+
+
+
+<!-- ###################### STEP 2 KEYWORDS ###################### -->
+<div class="hideContent" ng-show="checkNext(0)">
+<h2>Step 2 / 6</h2>
+
+<h3>What keywords best describe your project?<br>
+<small>for example: sleep deprivation, stress, asthma, coughing...</small>
+</h3>
+
+    <ul ng-repeat="keyword in keywords.finalValue">
+      <li>{{keyword}} <button ng-click="deleteKeyword($index)" class="btn-danger">Delete</button></li>
+    </ul>
+
+<br>
+
+<!-- Add checkbox List items -->
+  <form ng-submit="addKeyword()">
+    <input type="text" ng-model="keyword"  size="30"
+               placeholder="Add new keyword here">
+        <input type="submit" value="add" ng-disabled="checkAddKeywords()">
+  </form>
+  <button ng-click="nextStep()" ng-disabled="checkSaveKeywords()">Next Step</button>
+<hr>
+</div>
+
+
+
+<!-- ###################### STEP 3 DESCRIPTION ###################### -->
+<div class="hideContent" ng-show="checkNext(1)">
+<h2>Step 3 / 6</h2>
+<div ng-form="noteForm">
+<h3>Describe your project in 100 words.<br>
+<small>{{180 - result.length}} chars remaining</small>
+</h3>
+<form>
+<textarea my-maxlength="180" ng-model="result" placeholder="Tell us what your main challenge is, what you would like to do about it, and why that will result in change." style="width: 500px; height: 200px" maxlength="180"></textarea>
+</form>
+<button ng-click="nextStep()" ng-disabled="checkDescription()">Save</button>
+</div>
+<hr>
+</div>
+
+
+
+
+<!-- ###################### STEP 4 TITLE ###################### -->
+<div class="hideContent" ng-show="checkNext(2)">
+<h2>Step 4 / 6</h2>
+<h3>Hey, you can also give your project a name.<br>
+<small>Please do so.</small>
+</h3>
+<input ng-model="title" type="text" placeholder="Title." style="width: 500px; height: 45px; font-size: 22px; "/></input>
+<br>
+<button ng-click="nextStep()" ng-disabled="checkTitle()">OK!</button>
+<hr>
+</div>
+
+
+
+<!-- ###################### STEP 5 SUMMARY ###################### -->
+<div class="hideContent" ng-show="checkNext(3)">
+<h2>Step 5 / 6</h2>
+<h3>Is everything correct?<br>
+<small>You can change everything at any time.</small>
+<br>
+<button ng-click="save()">Looks good for now</button>
+</h3>
+</div>
+
+
+
+
+<!-- ###################### STEP 6 WHAT TO DO ###################### -->
+<div class="hideContent" ng-show="checkNext(4)">
+<h2>Step 6 / 6</h2>
+
+<h3>To start your project, you could do one of the following:<br></h3>
+
+<div class="pull-right">
+  <h3><a href="">Do more research here:</a></h3>
+  <ul>
+    <li ng-repeat="newProject in newProjects"><a href="">{{newProject.title}}</a></li>
+  </ul>
+</div>
+<div class="pull-left">
+  <h3><a href="">Find people to help you:</a></h3>
+  <ul>
+    <li ng-repeat="user in users"><a href="">{{user.user}}</a></li>
+  </ul>
+</div>
+<br>
+</div>
+
+
+
+<!-- DEBUG 
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h3>Selection:</h3>
+    <pre ng-bind="selection | json"></pre>
+    <h3>keywords:</h3>
+    <pre ng-bind="keywords | json"></pre>
+-->
+
+  </div>
+</div>

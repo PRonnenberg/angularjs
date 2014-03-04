@@ -1,10 +1,19 @@
 "use strict";
 
-angular.module('myApp.routes', ['ngRoute'])
+angular.module('myApp.routes', [
 
+   'ngRoute',
+   'myApp.services'
+   ])
+   
    // configure views; the authRequired parameter is used for specifying pages
    // which should only be available while logged in
    .config(['$routeProvider', function($routeProvider) {
+      $routeProvider.when('/inputForm', {
+         templateUrl: 'partials/inputForm.html',
+         controller: 'inputFormCtrl'
+      });
+
       $routeProvider.when('/home', {
          templateUrl: 'partials/home.html',
          controller: 'HomeCtrl'
@@ -45,6 +54,16 @@ angular.module('myApp.routes', ['ngRoute'])
          controller: 'projectViewCtrl'
       });
 
+      $routeProvider.when('/projects', {
+         templateUrl: 'partials/projects.html',
+         controller: 'projectsCtrl'
+      });
+
+      $routeProvider.when('/phones/:phoneId', {
+        templateUrl: 'partials/projectsDetail.html',
+        controller: 'projectsDetailCtrl'
+      });
+
       $routeProvider.when('/account', {
          authRequired: true, // must authenticate before viewing this page
          templateUrl: 'partials/account.html',
@@ -56,5 +75,5 @@ angular.module('myApp.routes', ['ngRoute'])
          controller: 'LoginCtrl'
       });
 
-      $routeProvider.otherwise({redirectTo: '/mainCat'});
+      $routeProvider.otherwise({redirectTo: '/inputForm'});
    }]);

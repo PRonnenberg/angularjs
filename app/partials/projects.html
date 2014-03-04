@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+
+
+    <div class="container-fluid">
+          <h1>Projects</h1>
+      <div class="row">
+        <div ng-repeat="phone in phones" class="col-xs-6 col-md-4">
+          <div class="thumbContainer">
+            <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+            <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+            <!-- Hide Snippet Info <p>{{phone.snippet}}</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button ng-click="showElements()">pressME</button>
+
+    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+    <div class="row">
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+
+    <!-- <pre ng-bind="friends | json"></pre> -->
+
+    <pre ng-bind="phones | json"></pre>
+
+  </div>
+</div>
